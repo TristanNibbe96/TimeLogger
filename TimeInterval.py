@@ -1,6 +1,9 @@
+from DateTime import DateTime
+
+
 class TimeInterval:
-    _start = 0
-    _end = 0
+    _start: DateTime
+    _end: DateTime
 
     def __init__(self, start, end):
         self._start = start
@@ -8,15 +11,9 @@ class TimeInterval:
 
     def get_interval(self):
         interval = 0
+
         if self._start.date == self._end.date:
-            self._start.time.difference(self._end.time)
+            return self._end.time - self._start.time
         else:
             print("DateTimes for this interval are on two different days")
         return interval
-
-
-
-
-
-
-

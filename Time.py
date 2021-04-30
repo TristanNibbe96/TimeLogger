@@ -8,6 +8,9 @@ class Time:
         self.set_minute(minute)
         self.set_am(AM)
 
+    def __sub__(self, other):
+        return self.get_minute() - other.get_minute()
+
     def set_hour(self, hour):
         self._hour = hour
 
@@ -16,3 +19,12 @@ class Time:
 
     def set_am(self, am):
         self._am = am
+
+    def get_minute(self):
+        return self._minute
+
+    def get_hour(self):
+        return self._hour
+
+    def get_am(self):
+        return self._am
