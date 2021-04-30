@@ -1,5 +1,6 @@
 from TimeInterval import TimeInterval
+from Time import Time
+from Date import Date
+from DateTime import DateTime
 
-temp = TimeInterval(1,2)
 
-print(temp.start)
