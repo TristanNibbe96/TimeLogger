@@ -1,3 +1,5 @@
-import tkinter as tk
+from TimeInterval import TimeInterval
 
-window=tk.Tk()
+temp = TimeInterval(1,2)
+
+print(temp.start)
