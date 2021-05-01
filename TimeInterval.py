@@ -12,8 +12,8 @@ class TimeInterval:
     def get_interval(self):
         interval = 0
 
-        if self._start.date == self._end.date:
-            return self._end.time - self._start.time
+        if self._start.get_date() == self._end.get_date():
+            return self._end.get_time() - self._start.get_time()
         else:
             print("DateTimes for this interval are on two different days")
         return interval

@@ -16,3 +16,9 @@ class DateTime:
 
     def set_time(self, time):
         self.time = time
+
+    def get_time(self):
+        return self.time
+
+    def get_date(self):
+        return self.date
