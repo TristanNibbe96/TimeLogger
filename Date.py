@@ -20,13 +20,22 @@ class Date:
         return equal
 
     def set_day(self, day):
-        self._day = day
+        if 1 <= day <= 31:
+            self._day = day
+        else:
+            print("Invalid value entered for day: " + day)
 
     def set_month(self, month):
-        self._month = month
+        if 1 <= month <= 12:
+            self._month = month
+        else:
+            print("Invalid value entered for month: " + month)
 
     def set_year(self, year):
-        self._year = year
+        if 1900 <= year <= 3000:
+            self._year = year
+        else:
+            print("Invalid value entered for year: " + year)
 
     def get_day(self):
         return self._day
