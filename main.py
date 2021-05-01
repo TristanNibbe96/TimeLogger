@@ -1,10 +1,11 @@
 from TimeInterval import TimeInterval
 from Time import Time
+from Time import Meridian
 from Date import Date
 from DateTime import DateTime
 
-time_one = Time(1, 20, True)
-time_two = Time(1, 40, True)
+time_one = Time(12, 0, Meridian.PM)
+time_two = Time(5, 0, Meridian.PM)
 
 date_one = Date(4, 29, 2021)
 date_two = Date(4, 29, 2021)
