@@ -3,7 +3,7 @@ class Date:
     _month = 0
     _year = 0
 
-    def __init__(self, day, month, year):
+    def __init__(self, month, day, year):
         self.set_year(year)
         self.set_month(month)
         self.set_day(day)
@@ -23,19 +23,19 @@ class Date:
         if 1 <= day <= 31:
             self._day = day
         else:
-            print("Invalid value entered for day: " + day)
+            print("Invalid value entered for day: " + str(day))
 
     def set_month(self, month):
         if 1 <= month <= 12:
             self._month = month
         else:
-            print("Invalid value entered for month: " + month)
+            print("Invalid value entered for month: " + str(month))
 
     def set_year(self, year):
         if 1900 <= year <= 3000:
             self._year = year
         else:
-            print("Invalid value entered for year: " + year)
+            print("Invalid value entered for year: " + str(year))
 
     def get_day(self):
         return self._day
