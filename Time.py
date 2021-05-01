@@ -12,13 +12,22 @@ class Time:
         return self.get_minute() - other.get_minute()
 
     def set_hour(self, hour):
-        self._hour = hour
+        if 1 <= hour <= 12:
+            self._hour = hour
+        else:
+            print("Invalid hour entered: " + hour)
 
     def set_minute(self, minute):
-        self._minute = minute
+        if 0 <= minute <= 59:
+            self._minute = minute
+        else:
+            print("Invalid minute entered: " + minute)
 
     def set_am(self, am):
-        self._am = am
+        if type(am) != bool:
+            print("Invalid AM variable: " + am)
+        else:
+            self._am = am
 
     def get_minute(self):
         return self._minute
