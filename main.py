@@ -4,8 +4,8 @@ from Time import Meridian
 from Date import Date
 from DateTime import DateTime
 
-time_one = Time(12, 0, Meridian.PM)
-time_two = Time(5, 0, Meridian.PM)
+time_one = Time(12, 40, Meridian.PM)
+time_two = Time(5, 30, Meridian.PM)
 
 date_one = Date(4, 29, 2021)
 date_two = Date(4, 29, 2021)

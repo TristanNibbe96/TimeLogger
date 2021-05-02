@@ -22,11 +22,18 @@ class Time:
         interval: TimeSpan
         hour = 0
         minute = 0
-
         start_counter = copy.deepcopy(start)
 
-        while start_counter != end:
-            start_counter.iterate()
+        if end.get_minute() > start.get_minute():
+            minute = end.get_minute() - start.get_minute()
+        elif end.get_minute() < start.get_minute():
+            end.decrement_hour()
+            while start_counter.get_minute() != end.get_minute():
+                minute += 1
+                start_counter.decrement_minute()
+
+        while start_counter.get_hour() != end.get_hour():
+            start_counter.increment_hour()
             hour += 1
 
         interval = TimeSpan(hour, minute)
@@ -51,7 +58,6 @@ class Time:
     def __str__(self):
         string = str(self._hour) + ":" + str(self._minute) + str(self._meridian)
         return string
-
 
     def set_hour(self, hour):
         if 1 <= hour <= 12:
@@ -80,9 +86,23 @@ class Time:
     def get_meridian(self):
         return self._meridian
 
-    def iterate(self):
+    def increment_hour(self):
         if self.get_hour() == 12:
             self.set_hour(1)
         else:
             new_hour = self.get_hour() + 1
             self.set_hour(new_hour)
+
+    def decrement_hour(self):
+        if self.get_hour() == 1:
+            self.set_hour(12)
+        else:
+            new_hour = self.get_hour() - 1
+            self.set_hour(new_hour)
+
+    def decrement_minute(self):
+        if self.get_minute() == 0:
+            self.set_minute(59)
+        else:
+            new_minute = self.get_minute() - 1
+            self.set_minute(new_minute)
