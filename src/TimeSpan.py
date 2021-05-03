@@ -7,7 +7,7 @@ class TimeSpan:
         self.set_minute(minute)
 
     def __str__(self):
-        string = str(self._hour) + ":" + str(self._minute)
+        string = str(self._hour) + ":" + str(self._minute).zfill(2)
         return string
 
     def set_hour(self, hour):

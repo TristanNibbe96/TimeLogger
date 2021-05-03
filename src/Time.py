@@ -56,7 +56,7 @@ class Time:
         return copy
 
     def __str__(self):
-        string = str(self._hour) + ":" + str(self._minute) + str(self._meridian)
+        string = str(self._hour) + ":" + str(self._minute).zfill(2) + str(self._meridian)
         return string
 
     def set_hour(self, hour):
