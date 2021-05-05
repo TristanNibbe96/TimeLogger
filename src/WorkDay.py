@@ -1,4 +1,3 @@
-from xxlimited import Null
 from TimeSpan import TimeSpan
 from DateTime import DateTime
 from TimeInterval import TimeInterval
@@ -6,12 +5,12 @@ from TimeInterval import TimeInterval
 
 class WorkDay:
     _intervals = []
-    _current_interval_start: DateTime
+    _current_interval_start = None
 
     def end_current_interval(self, end_datetime):
-        new_interval = TimeInterval(self._current_interval_start, current_interval_end)
+        new_interval = TimeInterval(self._current_interval_start, end_datetime)
         self.append_interval(new_interval)
-        self._current_interval_start = Null
+        self._current_interval_start = None
 
     def set_interval_start(self, start_datetime):
         self._current_interval_start = start_datetime
@@ -27,5 +26,5 @@ class WorkDay:
         self._intervals.append(interval)
 
     def check_for_incomplete_interval(self):
-        if self._current_interval_start != Null:
+        if self._current_interval_start is not None:
             print("Trying to access total hours worked in a day that has an incomplete time interval")
