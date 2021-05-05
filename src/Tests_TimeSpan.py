@@ -57,10 +57,10 @@ class TestTimeSubtraction(unittest.TestCase):
 
 class TestTimeSpanAddition(unittest.TestCase):
     def test_basic_addition(self):
-        timeOne = TimeSpan(1, 20)
-        timeTwo = TimeSpan(1, 20)
+        time_one = TimeSpan(1, 20)
+        time_two = TimeSpan(1, 20)
 
-        sum = timeOne + timeTwo
+        sum = time_one + time_two
         self.assertEqual(str(sum), "2:40")
 
 
