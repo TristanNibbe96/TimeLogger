@@ -60,8 +60,24 @@ class TestTimeSpanAddition(unittest.TestCase):
         time_one = TimeSpan(1, 20)
         time_two = TimeSpan(1, 20)
 
-        sum = time_one + time_two
-        self.assertEqual(str(sum), "2:40")
+        time_sum = time_one + time_two
+        self.assertEqual(str(time_sum), "2:40")
+
+    def test_minutes_add_to_exact_hour(self):
+        time_one = TimeSpan(1, 40)
+        time_two = TimeSpan(1, 20)
+
+        time_sum = time_one + time_two
+        self.assertEqual(str(time_sum), "3:00")
+
+    def test_minutes_add_to_greater_than_hour(self):
+        time_one = TimeSpan(1, 40)
+        time_two = TimeSpan(1, 40)
+
+        time_sum = time_one + time_two
+        self.assertEqual(str(time_sum), "3:20")
+
+
 
 
 if __name__ == '__main__':
