@@ -1,6 +1,7 @@
 import unittest
 from src.Time import Time
 from src.Time import Meridian
+from src.TimeSpan import TimeSpan
 
 
 class TestTimeSubtraction(unittest.TestCase):
@@ -52,6 +53,15 @@ class TestTimeSubtraction(unittest.TestCase):
         difference = time_two - time_one
 
         self.assertEqual(str(difference), "0:00")
+
+
+class TestTimeSpanAddition(unittest.TestCase):
+    def test_basic_addition(self):
+        timeOne = TimeSpan(1, 20)
+        timeTwo = TimeSpan(1, 20)
+
+        sum = timeOne + timeTwo
+        self.assertEqual(str(sum), "2:40")
 
 
 if __name__ == '__main__':
