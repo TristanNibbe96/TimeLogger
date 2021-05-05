@@ -8,13 +8,13 @@ class WorkDay:
     _intervals = []
     _current_interval_start: DateTime
 
-    def end_current_interval(self, current_interval_end):
+    def end_current_interval(self, end_datetime):
         new_interval = TimeInterval(self._current_interval_start, current_interval_end)
         self.append_interval(new_interval)
         self._current_interval_start = Null
 
-    def set_interval_start(self, interval):
-        self._current_interval_start = interval
+    def set_interval_start(self, start_datetime):
+        self._current_interval_start = start_datetime
 
     def get_total_hours_worked(self):
         self.check_for_incomplete_interval()
