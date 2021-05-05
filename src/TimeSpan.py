@@ -10,6 +10,18 @@ class TimeSpan:
         string = str(self._hour) + ":" + str(self._minute).zfill(2)
         return string
 
+    def __add__(self, other):
+        hour = 0
+        minute = self.get_minute() + other.get_minute()
+
+        if minute >= 60:
+            minute -= 60
+            hour += 1
+
+        hour += self.get_hour() + other.get_hour()
+
+        return TimeSpan(hour,minute)
+
     def set_hour(self, hour):
         if 0 <= hour <= 23:
             self._hour = hour
