@@ -86,7 +86,5 @@ class TestTimeSpanAddition(unittest.TestCase):
         self.assertEqual(str(time_sum), "3:20")
 
 
-
-
 if __name__ == '__main__':
     unittest.main()
