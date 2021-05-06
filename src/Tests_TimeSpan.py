@@ -6,13 +6,21 @@ from src.TimeSpan import TimeSpan
 
 class TestTimeSubtraction(unittest.TestCase):
 
-    def test_less_minutes_in_start_than_end(self):
+    def test_less_minutes_in_start_than_end_1(self):
         time_one = Time(12, 40, Meridian.PM)
         time_two = Time(5, 30, Meridian.PM)
 
         difference = time_two - time_one
 
-        self.assertEqual(str(difference), "4:10")
+        self.assertEqual(str(difference), "4:50")
+
+    def test_less_minutes_in_start_than_end_2(self):
+        time_one = Time(12, 35, Meridian.PM)
+        time_two = Time(7, 20, Meridian.PM)
+
+        difference = time_two - time_one
+
+        self.assertEqual(str(difference), "6:45")
 
     def test_more_minutes_in_start_than_end(self):
         time_one = Time(12, 40, Meridian.PM)

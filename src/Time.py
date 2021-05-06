@@ -28,8 +28,9 @@ class Time:
             minute = end.get_minute() - start.get_minute()
         elif end.get_minute() < start.get_minute():
             end.decrement_hour()
+            minute = 60
             while start_counter.get_minute() != end.get_minute():
-                minute += 1
+                minute -= 1
                 start_counter.decrement_minute()
 
         while start_counter.get_hour() != end.get_hour():
