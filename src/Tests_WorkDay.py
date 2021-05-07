@@ -42,6 +42,17 @@ class TestSingleInterval(unittest.TestCase):
 
         self.assertEqual(day.check_for_incomplete_interval(), False)
 
+    def test_single_interval_hanging(self):
+        day = WorkDay()
+
+        time_one = Time(12, 40, Meridian.PM)
+        date_one = Date(4, 29, 2021)
+        date_time_one = DateTime(date_one, time_one)
+
+        day.set_interval_start(date_time_one)
+
+        self.assertEqual(day.check_for_incomplete_interval(), True)
+
 
 if __name__ == '__main__':
     unittest.main()
