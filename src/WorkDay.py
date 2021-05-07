@@ -25,6 +25,9 @@ class WorkDay:
     def append_interval(self, interval):
         self._intervals.append(interval)
 
+    def clear_interval(self):
+        self._intervals = []
+
     def check_for_incomplete_interval(self):
         hanging_interval = False
         if self._current_interval_start is not None:
