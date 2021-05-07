@@ -26,5 +26,11 @@ class WorkDay:
         self._intervals.append(interval)
 
     def check_for_incomplete_interval(self):
+        hanging_interval = False
         if self._current_interval_start is not None:
+            hanging_interval = True
+
+        if hanging_interval:
             print("Trying to access total hours worked in a day that has an incomplete time interval")
+
+        return hanging_interval

@@ -25,6 +25,23 @@ class TestSingleInterval(unittest.TestCase):
 
         self.assertEqual(str(day.get_total_hours_worked()), "4:50")
 
+    def test_single_interval_not_hanging(self):
+        day = WorkDay()
+
+        time_one = Time(12, 40, Meridian.PM)
+        time_two = Time(5, 30, Meridian.PM)
+
+        date_one = Date(4, 29, 2021)
+        date_two = Date(4, 29, 2021)
+
+        date_time_one = DateTime(date_one, time_one)
+        date_time_two = DateTime(date_two, time_two)
+
+        day.set_interval_start(date_time_one)
+        day.end_current_interval(date_time_two)
+
+        self.assertEqual(day.check_for_incomplete_interval(), False)
+
 
 if __name__ == '__main__':
     unittest.main()
