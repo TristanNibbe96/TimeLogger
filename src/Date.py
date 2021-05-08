@@ -8,6 +8,10 @@ class Date:
         self.set_month(month)
         self.set_day(day)
 
+    def __str__(self):
+        string = str(self.get_month()) + "/" + str(self.get_day()) + "/" + str(self.get_year())
+        return string
+
     def __eq__(self, other):
         equal = True
         if self.get_day() != other.get_day():

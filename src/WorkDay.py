@@ -7,7 +7,7 @@ from Date import Date
 class WorkDay:
     _intervals = []
     _current_interval_start = None
-    date: Date
+    date = None
 
     def __str__(self):
         work_day_string = str(self.date)
