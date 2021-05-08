@@ -19,5 +19,5 @@ date_time_two = DateTime(date_two, time_two)
 day.set_interval_start(date_time_one)
 day.end_current_interval(date_time_two)
 
-print(day.get_total_hours_worked())
+print(str(day))
 

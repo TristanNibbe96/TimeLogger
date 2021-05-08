@@ -1,11 +1,18 @@
 from TimeSpan import TimeSpan
 from DateTime import DateTime
 from TimeInterval import TimeInterval
+from src import Date
 
 
 class WorkDay:
     _intervals = []
     _current_interval_start = None
+    _date: Date
+
+    def __str__(self):
+        work_day_string = str(self._date)
+        work_day_string += str(self.get_total_hours_worked())
+        return work_day_string
 
     def end_current_interval(self, end_datetime):
         new_interval = TimeInterval(self._current_interval_start, end_datetime)
