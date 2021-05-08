@@ -11,7 +11,8 @@ class WorkDay:
 
     def __str__(self):
         work_day_string = str(self.date)
-        work_day_string += str(self.get_total_hours_worked())
+        work_day_string += "\n"
+        work_day_string += "Hours Worked: " + str(self.get_total_hours_worked())
         return work_day_string
 
     def end_current_interval(self, end_datetime):
