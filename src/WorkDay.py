@@ -1,16 +1,16 @@
 from TimeSpan import TimeSpan
 from DateTime import DateTime
 from TimeInterval import TimeInterval
-from src import Date
+from Date import Date
 
 
 class WorkDay:
     _intervals = []
     _current_interval_start = None
-    _date: Date
+    date: Date
 
     def __str__(self):
-        work_day_string = str(self._date)
+        work_day_string = str(self.date)
         work_day_string += str(self.get_total_hours_worked())
         return work_day_string
 
@@ -21,6 +21,8 @@ class WorkDay:
 
     def set_interval_start(self, start_datetime):
         self._current_interval_start = start_datetime
+        if self.date is None:
+            self.date = start_datetime.get_date()
 
     def get_total_hours_worked(self):
         self.check_for_incomplete_interval()
