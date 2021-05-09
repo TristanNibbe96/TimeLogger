@@ -10,7 +10,10 @@ class TimeInterval:
         self._end = end
 
     def __str__(self):
+        string = "Start: " + str(self._start.get_time())
+        string += "\nEnd: " + str(self._end.get_time())
 
+        return string
 
     def get_interval(self):
         interval = 0
