@@ -9,6 +9,9 @@ class TimeInterval:
         self._start = start
         self._end = end
 
+    def __str__(self):
+
+
     def get_interval(self):
         interval = 0
 

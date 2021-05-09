@@ -12,6 +12,9 @@ class WorkDay:
     def __str__(self):
         work_day_string = str(self.date)
         work_day_string += "\n"
+        for interval in self._intervals:
+            work_day_string += str(interval)
+            work_day_string += "\n"
         work_day_string += "Hours Worked: " + str(self.get_total_hours_worked())
         return work_day_string
 
