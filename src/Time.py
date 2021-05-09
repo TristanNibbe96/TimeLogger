@@ -7,6 +7,9 @@ class Meridian(enum.Enum):
     AM = 1
     PM = 2
 
+    def __str__(self):
+        return self.name
+
 
 class Time:
     _hour = 0
